@@ -1,0 +1,5 @@
+# semantic error: 'x' is never declared in this scope
+def f():
+    return x + 1
+
+print(f())

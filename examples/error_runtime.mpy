@@ -1,0 +1,4 @@
+# runtime error: division by zero (demonstrates runtime traceback pointing to .mpy lines)
+a = 1
+b = 0
+print(a / b)

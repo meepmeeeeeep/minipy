@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: minipy
+Version: 0.1.0
+Summary: A small educational language transpiled to CPython AST
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+````markdown
+# miniPy (prototype)
+
+This project contains a small prototype language "miniPy" and two backends:
+- Transpiler to CPython AST (default): converts miniPy AST to Python ast.Module, compiles and executes it.
+- Interpreter: AST-walking interpreter for testing and debugging.
+
+Run the example:
+- Transpile & run:
+  python -m minipy.cli example.mpy
+- Emit the generated Python source for inspection:
+  python -m minipy.cli example.mpy --emit-py
+- Run with the interpreter backend:
+  python -m minipy.cli example.mpy --backend=interpret
+
+What's included:
+- minipy/lexer.py: tokenizes input (uses Python tokenize for INDENT/DEDENT).
+- minipy/parser.py: recursive-descent parser that produces AST nodes.
+- minipy/ast_nodes.py: simple dataclass-based AST nodes.
+- minipy/semantic.py: basic semantic checks (undeclared variable use).
+- minipy/codegen_pyast.py: generate Python ast and compile/exec.
+- minipy/interpreter.py: AST-walking interpreter.
+- minipy/cli.py: CLI glue.
+- example.mpy: sample program.
+
+Next steps:
+- Add more robust error messages and source snippets for diagnostics.
+- Expand semantic checks and add tests.
+- Add more builtins and types (strings, lists).
+- Add packaging (pyproject.toml) and CI.

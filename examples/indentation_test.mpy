@@ -1,0 +1,11 @@
+def outer():
+    a = 1
+    if a == 1:
+        b = 10
+        if b > 5:
+            c = a + b
+        else:
+            c = 0
+    return c
+
+print(outer())

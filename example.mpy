@@ -1,0 +1,17 @@
+# Example miniPy program
+def fact(n):
+    if n == 0:
+        return 1
+    else:
+        return n * fact(n - 1)
+
+a = 5
+print(fact(a))
+
+i = 0
+s = 0
+while i < 5:
+    s = s + i
+    i = i + 1
+
+print(s)

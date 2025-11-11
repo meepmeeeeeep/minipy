@@ -1,0 +1,2 @@
+# This should trigger a semantic error for using an undeclared variable 'a'
+print(a)

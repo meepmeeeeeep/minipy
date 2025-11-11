@@ -1,0 +1,4 @@
+def sum2(a, b):
+    return a + b
+
+print(sum2(2, 3))

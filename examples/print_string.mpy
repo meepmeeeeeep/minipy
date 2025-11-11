@@ -1,0 +1,4 @@
+# print a string literal and a concatenated string
+s = "Hello, miniPy!"
+print(s)
+print("Hello, " + "world")   # demonstrates string concatenation with +
