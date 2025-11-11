@@ -10,8 +10,3 @@
 - Performance: the AST-walking interpreter is slow (for testing/debugging). The transpiled backend relies on CPython and has no compiler optimizations (no constant folding, inlining, etc.).
 - Recursion and runtime limits: deep recursion subject to Python recursion limits; no tail-call optimization.
 - Packaging & multi-file projects: no build system for multi-file projects; packaging is minimal.
-
-Quick mitigations / next steps (suggested)
-- Run untrusted code inside a sandboxed process/container or restrict builtins before executing transpiled code.
-- Improve semantic checks (argument arity, basic types) and expand automated tests to reduce divergence between backends.
-- Add data structures (lists/dicts) and boolean/logical operators next; later consider small optimizations (constant folding) and a richer standard library.
