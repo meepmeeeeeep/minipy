@@ -1,37 +1,35 @@
-Metadata-Version: 2.4
+Metadata-Version: 2.1
 Name: minipy
 Version: 0.1.0
 Summary: A small educational language transpiled to CPython AST
+Home-page: https://github.com/meepmeeeeeep/minipy
+Platform: any
+Keywords: language, compiler, transpiler, miniPy, educational
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Developers
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 
-````markdown
-# miniPy (prototype)
+miniPy
+======
 
-This project contains a small prototype language "miniPy" and two backends:
-- Transpiler to CPython AST (default): converts miniPy AST to Python ast.Module, compiles and executes it.
-- Interpreter: AST-walking interpreter for testing and debugging.
+miniPy is a small educational language and prototype compiler implemented in Python.
+The project provides two backends:
 
-Run the example:
-- Transpile & run:
-  python -m minipy.cli example.mpy
-- Emit the generated Python source for inspection:
-  python -m minipy.cli example.mpy --emit-py
-- Run with the interpreter backend:
-  python -m minipy.cli example.mpy --backend=interpret
+- Transpiler → CPython AST: converts miniPy programs to Python ast.Module, compiles, and executes them.
+- Interpreter: an AST-walking interpreter backend useful for testing and debugging language semantics.
 
-What's included:
-- minipy/lexer.py: tokenizes input (uses Python tokenize for INDENT/DEDENT).
-- minipy/parser.py: recursive-descent parser that produces AST nodes.
-- minipy/ast_nodes.py: simple dataclass-based AST nodes.
-- minipy/semantic.py: basic semantic checks (undeclared variable use).
-- minipy/codegen_pyast.py: generate Python ast and compile/exec.
-- minipy/interpreter.py: AST-walking interpreter.
-- minipy/cli.py: CLI glue.
-- example.mpy: sample program.
+Core features implemented:
+- Indentation-based blocks (INDENT / DEDENT)
+- Assignments, expressions, arithmetic and comparison operators
+- If / elif / else, while loops
+- Function definitions, calls, recursion, lexical closures, return
+- String literals and concatenation
+- Basic semantic checking (undeclared variable detection)
+- Two execution backends and example programs
 
-Next steps:
-- Add more robust error messages and source snippets for diagnostics.
-- Expand semantic checks and add tests.
-- Add more builtins and types (strings, lists).
-- Add packaging (pyproject.toml) and CI.
+For more details and usage examples, see README.md in the project root.
